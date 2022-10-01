@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer,String,Date
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:IKQcmg16377@node37016-nititat.proen.app.ruk-com.cloud:11257/testdb'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:IKQcmg16377@10.104.9.232:5432/testdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
@@ -36,4 +36,4 @@ def process():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=80,debug=True)
