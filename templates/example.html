@@ -1,16 +1,20 @@
 <html>
-    <head>
-        <title>Test Deploy Cloud!</title>
-    </head>
-    <body>
-        <h1>This is  the example temlate code!</h1>
-        <p>Experience is a truer guide than the word of others.</p>
+  <head>
+    <title> Example Template!</title>
+  </head>
+  <body>
+    {% if myvar %}
+    <h1> The variable I passed in is : {{ myvar }} </h1>
+    {% else %}
+    <h1> No variable was passed in . </h1>
+    {% endif %}
 
-        <a href="https://ruk-com.cloud">This a link to RUK-COM Cloud</a>
-
-        {% for link in links %}
-        <a href="{{ link }}">Here is another interesting link!</a>
-        {% endfor %}
-        <h3>This is the end of our deploy test</h3>
-    </body>
+    <h1> This is the example template ! </h1>
+    <p> Blah blah blah </p>
+    <a href="https://www.google.com"> This is a link to Google ! </a>
+    {% for link in links %}
+    <a href="{{link}}"> Here is a link ! </a>
+    {% endfor %}
+    <h3> This is the end of the template </h3>
+  </body>
 </html>
