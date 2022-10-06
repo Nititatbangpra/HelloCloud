@@ -8,7 +8,7 @@ import yaml
 
 #เติมข้อมูลให้ครบก่อนใน configs.py !!!!#
 from configs    import DATABASE_URI , f_yam
-from models2  import Base , Book
+from models  import Base , Book
 
 engine = create_engine(DATABASE_URI)
 

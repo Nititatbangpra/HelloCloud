@@ -6,7 +6,7 @@ import datetime
 
 #Create engine 
 
-db_uri = 'sqlite///Ex.db'
+db_uri = 'sqlite///Ex2.sqlite3'
 engine =create_engine(db_uri,echo = False)
 
 
@@ -33,4 +33,6 @@ user = Member(
 
 session.add(user)
 session.commit()
+
+
 print(user)

@@ -57,4 +57,56 @@ class Order(Base):
 
     def add_products(self , items):
         for product , qty , in items:
-            self.order_products.app
+            self.order_products.append(Order_Product(
+                order=self, product=product, quantity=qty))
+
+    def __init__(self, name):
+        self.id = uuid.uuid4().hex
+        self.name = name
+        self.product = []
+
+    def __repr__(self):
+        return '<Order {}>'.format(self.name)
+
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+prod1 = Product(name="Oreo")
+prod2 = Product(name="Hide and Seek")
+prod3 = Product(name="Marie")
+prod4 = Product(name="Good Day")
+
+session.add_all([prod1,prod2,prod3,prod4])
+session.commit()
+
+order1 = Order(name="First Order")
+order2 = Order(name="Second Order")
+
+order1.add_products([(prod1,4) ,(prod2,5), (prod3,4) ])
+order2.add_products([(prod2,6),(prod1,1), (prod3,2) (prod4,1)])
+
+session.commit()
+
+
+print("Products array of order1: ")
+print(order1.products)
+print("Products array of order2: ")
+print(order2.products)
+print("Orders array of order1: ")
+print(prod1.orders)
+print("Orders array of order2: ")
+print(prod2.orders)
+print("Orders array of order3: ")
+print(prod3.orders)
+print("Orders array of order4: ")
+print(prod4.orders)
+
+print("Order_Products Array od order1 : ")
+print(order1.order_products)
+
+print("Order_Products Array od order1 : ")
+print(order1.order_products)
+
