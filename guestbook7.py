@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer,String,Date
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:IKQcmg16377@10.104.9.232:5432/testdb'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:ONDcqt19301@10.104.9.231:5432/testdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
