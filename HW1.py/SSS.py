@@ -22,23 +22,23 @@ class Registration(Base):
     __tablename__ = 'Registration' 
     id = Column(Integer(), primary_key = True)
     student_id = Column(String(13)) 
-    subject_id = Column(String(15),nullable = False) 
+    sub_id = Column(String(15),nullable = False) 
     year = Column(String(4),nullable=False) 
     semester = Column(String(1),nullable=False)  
     grade = Column(String(2))
 
     def __repr__(self):
-        return '<User(student_id = {}, subject_id = {}, year = {}, semester ={}, grade={})>'.format(self.student_id, \
-            self.subject_id, self.year , self.semester, self.grade)
+        return '<User(student_id = {}, sub_id = {}, year = {}, semester ={}, grade={})>'.format(self.student_id, \
+            self.sub_id, self.year , self.semester, self.grade)
 
 class Subjects(Base):
     __tablename__ = 'Subjects' 
-    subject_id = Column(String(15),primary_key = True) 
+    sub_id = Column(String(15),primary_key = True) 
     subject_name = Column(String(50),nullable = False) 
     credit = Column(Integer(),nullable=False) 
     teacher_id = Column(String(3),nullable=False) 
     def __repr__(self):
-        return '<User(subject_id = {}, subject_name = {}, credit = {}, teacher_id ={})>'.format(self.subject_id, \
+        return '<User(sub_id = {}, subject_name = {}, credit = {}, teacher_id ={})>'.format(self.sub_id, \
             self.subject_name, self.credit , self.teacher_id)
 
 class Teacher(Base):
@@ -82,7 +82,7 @@ user3 = Students(
 
 regis1 = Registration(
     student_id ='6406022610023',
-    subject_id='060233113',
+    sub_id='060233113',
     year='2565',
     semester ='1',
     grade = 'A'
@@ -90,7 +90,7 @@ regis1 = Registration(
 
 regis11 = Registration(
     student_id ='6406022610023',
-    subject_id='060233201',
+    sub_id='060233201',
     year='2565',
     semester ='1',
     grade = 'C+'
@@ -98,7 +98,7 @@ regis11 = Registration(
 
 regis2 = Registration(
     student_id ='6406022610015',
-    subject_id='060233113',
+    sub_id='060233113',
     year='2565',
     semester ='1',
     grade = 'A'
@@ -106,7 +106,7 @@ regis2 = Registration(
 
 regis22 = Registration(
     student_id ='6406022610015',
-    subject_id='060233201',
+    sub_id='060233201',
     year='2565',
     semester ='1',
     grade = 'B+'
@@ -114,7 +114,7 @@ regis22 = Registration(
 
 regis3 = Registration(
     student_id ='6406022620053',
-    subject_id='060233113',
+    sub_id='060233113',
     year='2565',
     semester ='1',
     grade = 'B'
@@ -122,22 +122,22 @@ regis3 = Registration(
 
 regis33 = Registration(
     student_id ='6406022620053',
-    subject_id='060233201',
+    sub_id='060233201',
     year='2565',
     semester ='1',
     grade = 'C'
 )
 
 Subjects1 = Subjects(
-    subject_id ='060233113',
-    subject_name='ADVANCED COMPUTER PROGRAMMIN',
+    sub_id ='060233113',
+    subject_name='ADVANCED COMPUTER PROGRAMMING',
     credit='3',
     teacher_id ='AMK'
 )
 
 
 Subjects2 = Subjects(
-    subject_id ='060233201',
+    sub_id ='060233201',
     subject_name='NETWORK ENGINEERING LABORATO',
     credit='1',
     teacher_id ='WKN'
