@@ -1,15 +1,12 @@
-import sqlite3
+import sqlite3 
 from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://webadmin:IKQcmg16377@10.104.9.232:5432/testdb'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 @app.route("/")
 def index():
-    c = sqlite3.connect('HW1.sqlite')
+    c = sqlite3.connect('HW1.sqlite3')
     cur = c.cursor()
     # cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name , Subjects.sub_id FROM Students, Subjects")
     cur.execute("SELECT Students.student_id , Students.f_name ,Students.l_name\
