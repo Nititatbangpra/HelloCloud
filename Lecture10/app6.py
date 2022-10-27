@@ -51,6 +51,12 @@ def add_product():
     return product_schema.jsonify(new_product)
 
 
+# Get Single Product
+@app. route('/product/<id>', methods=['GET'])
+def get_product (id):
+    product = Product.query.get(id)
+    return product_schema.jsonify(product)
+
 
 
 

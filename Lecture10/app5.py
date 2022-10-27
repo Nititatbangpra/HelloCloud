@@ -50,6 +50,12 @@ def add_product():
     db.session.commit()
     return product_schema.jsonify(new_product)
 
+# Get All Products
+@app.route('/product', methods=['GET'])
+def get_products():
+    all_products = Product.query.all()
+    result = products_schema.dump(all_products)
+    return jsonify(result)
 
 
 

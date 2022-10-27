@@ -52,6 +52,15 @@ def add_product():
 
 
 
+# Delete Product
+@app.route('/product/<id>', methods=['DELETE'])
+def delete_product(id):
+
+    product = Product.query.get(id)
+    db.session.delete(product)
+    db.session.commit()
+    return product_schema.jsonify(product)
+
 
 
 # Run Server
